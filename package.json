@@ -1,0 +1,26 @@
+{
+  "name": "odin-library",
+  "version": "1.0.0",
+  "description": "This is a practice project for The Odin Project: Library.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthony-roncal/odin-library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthony-roncal/odin-library/issues"
+  },
+  "homepage": "https://github.com/anthony-roncal/odin-library#readme",
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "2.8.3"
+  }
+}
