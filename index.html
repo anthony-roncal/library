@@ -11,9 +11,9 @@
 <body>
     <header>
         <h1>Odin Library</h1>
-        <button>Add a book</button>
     </header>
     <div class="container">
+        <button id="add">Add a book</button>
         <form action="#" method="post">
             <label for="title">Title*</label>
             <input type="text" name="title" id="title" required>
@@ -23,6 +23,8 @@
             <input type="tel" name="pages" id="pages" required>
             <label for="isRead">I have read this book</label>
             <input type="checkbox" name="isRead" id="isRead">
+            <button type="submit" id="submit">Add to library</button>
+            <button type="button" id="cancel">Cancel</button>
         </form>
         <div class="library">
         </div>

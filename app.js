@@ -1,4 +1,12 @@
 /* eslint-disable no-console */
+const addButton = document.querySelector('#add');
+const form = document.querySelector('form');
+const formTitle = document.getElementById('title');
+const formAuthor = document.getElementById('author');
+const formPages = document.getElementById('pages');
+const formIsRead = document.getElementById('isRead');
+const formSubmitButton = document.querySelector('#submit');
+const formCancelButton = document.querySelector('#cancel');
 const library = document.querySelector('.library');
 
 const myLibrary = [];
@@ -17,6 +25,9 @@ function addBookToLibrary(book) {
 }
 
 function displayLibrary() {
+    Array.from(library.children).forEach(book => {
+        library.removeChild(book);
+    })
     myLibrary.forEach (book => {
         const card = document.createElement('div');
         const cardTitle = document.createElement('p');
@@ -36,6 +47,31 @@ function displayLibrary() {
     });
 }
 
+function toggleForm() {
+    if(form.style.display !== "none") {
+        form.style.display = "none";
+        form.reset();
+        addButton.style.display = "block";
+    } else {
+        form.style.display = "grid";
+        addButton.style.display = "none";
+    }
+}
+
+addButton.addEventListener('click', toggleForm);
+
+function submitForm(e) {
+    e.preventDefault();
+    const newBook = new Book(formTitle.value, formAuthor.value, formPages.value, formIsRead.checked);
+    addBookToLibrary (newBook);
+    toggleForm();
+    displayLibrary();
+}
+
+formSubmitButton.addEventListener('click', submitForm);
+
+formCancelButton.addEventListener('click', toggleForm);
+
 // hardcode books
 const book1 = new Book("The Devotion of Suspect X", "Keigo Higashino", 320, true);
 const book2 = new Book("Salvation of a Saint", "Keigo Higashino", 336, true);
@@ -48,5 +84,5 @@ addBookToLibrary(book3);
 addBookToLibrary(book4);
 addBookToLibrary(book5);
 
-
+form.style.display = "none";
 displayLibrary();
