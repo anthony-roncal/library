@@ -48,13 +48,13 @@ function displayLibrary() {
 }
 
 function toggleForm() {
-    if(form.style.display !== "none") {
+    if(addButton.style.display === "block") {
+        form.style.display = "grid";
+        addButton.style.display = "none";
+    } else {
         form.style.display = "none";
         form.reset();
         addButton.style.display = "block";
-    } else {
-        form.style.display = "grid";
-        addButton.style.display = "none";
     }
 }
 
@@ -84,5 +84,4 @@ addBookToLibrary(book3);
 addBookToLibrary(book4);
 addBookToLibrary(book5);
 
-form.style.display = "none";
 displayLibrary();
