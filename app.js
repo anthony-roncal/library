@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+const body = document.querySelector('body');
+
 const myLibrary = [];
 
 function Book(title, author, pages, isRead) {
@@ -16,8 +18,21 @@ function addBookToLibrary(book) {
 
 function displayLibrary() {
     myLibrary.forEach (book => {
-        console.log(book);
-        
+        const card = document.createElement('div');
+        const cardTitle = document.createElement('p');
+        const cardAuthor = document.createElement('p');
+        const cardPages = document.createElement('p');
+        const cardIsRead = document.createElement('p');
+        cardTitle.textContent = book.title;
+        cardAuthor.textContent = book.author;
+        cardPages.textContent = book.pages;
+        cardIsRead.textContent = (book.isRead) ? "Already read" : "Not yet read";
+        card.appendChild(cardTitle);
+        card.appendChild(cardAuthor);
+        card.appendChild(cardPages);
+        card.appendChild(cardIsRead);
+        card.classList.add('card');
+        body.appendChild(card);
     });
 }
 
