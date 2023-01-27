@@ -4,6 +4,10 @@ body {
     background-color: #e2e8f0;
 }
 
+p {
+    margin: 0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -22,7 +26,8 @@ header {
     flex-direction: column;
 }
 
-button {
+.container > button,
+form > button {
     padding: 15px 30px;
     border-radius: 10px;
     border: none;
@@ -79,7 +84,7 @@ input[type="tel"] {
 .library {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
@@ -88,6 +93,20 @@ input[type="tel"] {
     box-sizing: border-box;
     width: 200px;
     height: 300px;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     background-color: white;
+    display: grid;
+    grid-template-rows: 35px 1fr 40px 40px 20px;
+}
+
+.card > button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: white;
+    justify-self: right;
+    position: relative;
+    left: 20px;
 }

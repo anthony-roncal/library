@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
 const addButton = document.querySelector('#add');
 const form = document.querySelector('form');
@@ -24,20 +25,33 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+function deleteBook(e) {
+    myLibrary.splice(e.target.parentNode.parentNode.dataset.index, 1);
+    displayLibrary();
+}
+
 function displayLibrary() {
     Array.from(library.children).forEach(book => {
         library.removeChild(book);
     })
-    myLibrary.forEach (book => {
+    myLibrary.forEach ((book, index) => {
         const card = document.createElement('div');
+        const cardDelete = document.createElement('button');
         const cardTitle = document.createElement('p');
         const cardAuthor = document.createElement('p');
         const cardPages = document.createElement('p');
         const cardIsRead = document.createElement('p');
+
+        cardDelete.innerHTML = `<img src="images/delete-outline.svg">`;
         cardTitle.textContent = book.title;
         cardAuthor.textContent = book.author;
         cardPages.textContent = book.pages;
         cardIsRead.textContent = (book.isRead) ? "Already read" : "Not yet read";
+        card.dataset.index = index;
+
+        cardDelete.addEventListener('click', deleteBook);
+
+        card.appendChild(cardDelete);
         card.appendChild(cardTitle);
         card.appendChild(cardAuthor);
         card.appendChild(cardPages);
