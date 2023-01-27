@@ -101,7 +101,7 @@ input[type="tel"] {
     grid-template-rows: 35px 1fr 40px 40px 20px;
 }
 
-.card > button {
+.card > button:first-child {
     width: 35px;
     height: 35px;
     border: none;
@@ -109,4 +109,16 @@ input[type="tel"] {
     justify-self: right;
     position: relative;
     left: 20px;
+}
+
+.card > button:hover {
+    opacity: 0.6;
+}
+
+.card > button:last-of-type {
+    border: none;
+    background-color: #94a3b8;
+    color: white;
+    box-shadow: 3px 3px 3px #cbd5e1;
+    border-radius: 10px;
 }

@@ -30,6 +30,12 @@ function deleteBook(e) {
     displayLibrary();
 }
 
+function toggleRead(e) {
+    myLibrary[e.target.parentNode.dataset.index].isRead = !(myLibrary[e.target.parentNode.dataset.index].isRead);
+    // console.log(myLibrary[e.target.parentNode.dataset.index].isRead);
+    displayLibrary();
+}
+
 function displayLibrary() {
     Array.from(library.children).forEach(book => {
         library.removeChild(book);
@@ -40,16 +46,17 @@ function displayLibrary() {
         const cardTitle = document.createElement('p');
         const cardAuthor = document.createElement('p');
         const cardPages = document.createElement('p');
-        const cardIsRead = document.createElement('p');
+        const cardIsRead = document.createElement('button');
 
         cardDelete.innerHTML = `<img src="images/delete-outline.svg">`;
         cardTitle.textContent = book.title;
         cardAuthor.textContent = book.author;
-        cardPages.textContent = book.pages;
+        cardPages.textContent = `${book.pages} pages`;
         cardIsRead.textContent = (book.isRead) ? "Already read" : "Not yet read";
         card.dataset.index = index;
 
         cardDelete.addEventListener('click', deleteBook);
+        cardIsRead.addEventListener('click', toggleRead);
 
         card.appendChild(cardDelete);
         card.appendChild(cardTitle);
