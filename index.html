@@ -9,6 +9,23 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Odin Library</h1>
+        <button>Add a book</button>
+    </header>
+    <div class="container">
+        <form action="#" method="post">
+            <label for="title">Title*</label>
+            <input type="text" name="title" id="title" required>
+            <label for="author">Author*</label>
+            <input type="text" name="author" id="author" required>
+            <label for="pages">Number of Pages*</label>
+            <input type="tel" name="pages" id="pages" required>
+            <label for="isRead">I have read this book</label>
+            <input type="checkbox" name="isRead" id="isRead">
+        </form>
+        <div class="library">
+        </div>
+    </div>
 </body>
 </html>
