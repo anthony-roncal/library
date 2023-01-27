@@ -13,7 +13,6 @@ const library = document.querySelector('.library');
 const myLibrary = [];
 
 function Book(title, author, pages, isRead) {
-    // constructor
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -21,7 +20,6 @@ function Book(title, author, pages, isRead) {
 }
 
 function addBookToLibrary(book) {
-    // do stuff here
     myLibrary.push(book);
 }
 
@@ -32,7 +30,6 @@ function deleteBook(e) {
 
 function toggleRead(e) {
     myLibrary[e.target.parentNode.dataset.index].isRead = !(myLibrary[e.target.parentNode.dataset.index].isRead);
-    // console.log(myLibrary[e.target.parentNode.dataset.index].isRead);
     displayLibrary();
 }
 
