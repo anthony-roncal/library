@@ -61,11 +61,13 @@ function toggleForm() {
 addButton.addEventListener('click', toggleForm);
 
 function submitForm(e) {
-    e.preventDefault();
-    const newBook = new Book(formTitle.value, formAuthor.value, formPages.value, formIsRead.checked);
-    addBookToLibrary (newBook);
-    toggleForm();
-    displayLibrary();
+    if(form.checkValidity()) {
+        e.preventDefault();
+        const newBook = new Book(formTitle.value, formAuthor.value, formPages.value, formIsRead.checked);
+        addBookToLibrary (newBook);
+        toggleForm();
+        displayLibrary();
+    }
 }
 
 formSubmitButton.addEventListener('click', submitForm);
