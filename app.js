@@ -25,7 +25,7 @@ function addBookToLibrary(book) {
 
 function deleteBook(e) {
     myLibrary.splice(e.target.parentNode.parentNode.dataset.index, 1);
-    displayLibrary();
+    library.removeChild(e.target.parentNode.parentNode);
 }
 
 function toggleRead(e) {
