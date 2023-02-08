@@ -1,7 +1,5 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
-
-
 const addButton = document.querySelector('#add');
 const form = document.querySelector('form');
 const formTitle = document.getElementById('title');
