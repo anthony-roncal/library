@@ -1,11 +1,3 @@
-class Book {
-    constructor(title, author, pages, isRead) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.isRead = isRead;
-    }
-}
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
 const addButton = document.querySelector('#add');
@@ -71,7 +63,6 @@ function displayLibrary() {
 
 function toggleForm() {
     if(addButton.style.display === 'block') {
-        // form.style.display = 'grid';
         form.style.display = 'block';
         addButton.style.display = 'none';
     } else {
