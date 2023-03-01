@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="book.js"></script>
+    <!-- <script src="book.js"></script> -->
     <script src="main.js" defer></script>    
 </head>
 <body>
@@ -16,16 +16,29 @@
     <div class="container">
         <button id="add" style="display: block">Add a book</button>
         <form action="#" method="post">
-            <label for="title">Title*</label>
-            <input type="text" name="title" id="title" required>
-            <label for="author">Author*</label>
-            <input type="text" name="author" id="author" required>
-            <label for="pages">Number of Pages*</label>
-            <input type="tel" name="pages" id="pages" required>
-            <label for="isRead">I have read this book</label>
-            <input type="checkbox" name="isRead" id="isRead">
-            <button type="submit" id="submit">Add to library</button>
-            <button type="button" id="cancel">Cancel</button>
+            <div class="title-row input-row">
+                <label for="title">Title*</label>
+                <input type="text" name="title" id="title">
+                <span class="error"></span>
+            </div>
+            <div class="author-row input-row">
+                <label for="author">Author*</label>
+                <input type="text" name="author" id="author">
+                <span class="error"></span>
+            </div>
+            <div class="pages-row input-row">
+                <label for="pages">Number of Pages*</label>
+                <input type="tel" name="pages" id="pages">
+                <span class="error"></span>
+            </div>
+            <div class="isRead-row">
+                <label for="isRead">I have read this book</label>
+                <input type="checkbox" name="isRead" id="isRead">
+            </div>
+            <div class="button-row">
+                <button type="submit" id="submit">Add to library</button>
+                <button type="button" id="cancel">Cancel</button>
+            </div>
         </form>
         <div class="library">
         </div>

@@ -97,7 +97,7 @@ const book1 = new Book("The Devotion of Suspect X", "Keigo Higashino", 320, true
 const book2 = new Book("Salvation of a Saint", "Keigo Higashino", 336, true);
 const book3 = new Book("A Midsummers Equation", "Keigo Higasino", 368, false);
 const book4 = new Book("Confessions", "Kanae Minato", 234, true);
-const book5 = new Book("Journey Under the Midnight Sun", "Keigo Higashino", 539, true);
+const book5 = new Book("Journey Under the Midnight Sun", "Keigo Higashino", 540, true);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
